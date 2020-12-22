@@ -1,0 +1,939 @@
+*
+{
+
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    /* Font family list taken from the Zomato home page */
+
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI,Roboto, Helvetica, Arial, ans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+
+}
+
+::selection
+{
+
+    background-color: greenyellow;
+
+}
+
+/* Common class */
+
+._button
+{
+
+    padding: 8px 10px;
+    border: 2px solid white;
+    border-radius: 5px;
+    color: white;
+
+}
+
+._anchor_Fix
+{
+
+    text-decoration: none;
+    color: rgb(82, 80, 80);
+
+}
+
+/* Preloader */
+
+#_preloader
+{
+
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: grid;
+    width: 100vw;
+    height: 100vh;
+    background-color: #cb202d;
+    justify-content: center;
+    align-content: center;
+    z-index: 100;
+
+}
+
+#_preloader h2
+{
+
+    color: white;
+    font-size: 5rem;
+    animation: _preloader_Animation 2s linear infinite;
+
+}
+
+@keyframes _preloader_Animation
+{
+
+    0%
+    {
+
+        transform: scale(0.8);
+
+    }
+    50%
+    {
+
+        transform: scale(1);
+
+    }
+    100%
+    {
+
+        transform: scale(0.8);            
+        
+    }
+
+}
+
+/* Header */
+
+._header
+{
+
+    position: relative;
+    width: 100%;
+    height: auto;
+    background-color: chocolate;
+    overflow: hidden;
+
+}
+
+._hero_Image
+{
+
+    width: 100%;
+    display: block;
+
+}
+
+._hero_Content
+{
+
+    position: absolute;
+    background: linear-gradient(to right ,rgba(255, 192, 203, 0), rgba(2, 31, 34, 0.329));
+    padding: 0px 100px;
+    width: 100%;
+    height: auto;
+    top: 0px;
+    bottom: 0px;
+
+}
+
+._header ._hero_Content nav h2, a
+{
+
+    display: inline-block;
+    color: white !important;
+
+}
+
+._header ._hero_Content nav
+{
+
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    padding: 10px 100px;
+    width: 100%;
+    height: 60px;
+    background-color: #cb202d;
+
+}
+
+._header ._hero_Content nav a
+{
+
+    float: right;
+    margin-right: 40px;
+
+}
+
+._hero_Text
+{
+
+    margin-top: 185px;
+    color: white;
+
+}
+
+._header ._hero_Content ._hero_Text h1
+{
+
+    font-size: 2.5rem;
+
+}
+
+._header ._hero_Content ._hero_Text h3
+{
+
+    font-size: 1.5rem;
+    font-weight: 100;
+
+}
+
+._information_Box
+{
+
+    display: grid;
+    grid-template-columns: 20% 80%;
+    grid-auto-rows: 100%;
+    grid-gap: 10px;
+    margin: 20px 0px;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.534);
+    height: 70px;
+
+}
+
+._icon
+{
+
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    
+}
+
+._information_Box input
+{
+
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+
+}
+
+._information_Box input::placeholder
+{
+
+    font-size: 20px;
+
+}
+
+._city
+{
+
+    display: grid;
+    grid-template-columns: 30px calc(100% - 60px) 30px;
+    grid-template-rows: 100%;
+
+
+}
+
+._find_Restaurant_Box
+{
+
+    display: grid;
+    grid-template-columns: 80% 20%;
+    grid-auto-rows: 100%px;
+    position: relative;
+
+
+}
+
+._find_Restaurant_Box input
+{
+
+    width: 100%;
+    height: unset;
+
+}
+
+._find_Restaurant_Bar
+{
+
+    display: grid;
+    grid-template-columns: 40px calc(100% - 170px) 130px;
+    grid-template-rows: 100%;
+    font-size: 20px;
+
+}
+
+._find_Restaurants
+{
+
+    border: 0px;
+    font-size: 16px;
+    outline: 0px;
+    background-color: #099e44;
+    color: #fff;
+    cursor: pointer;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    
+}
+
+._detected_Icon
+{
+
+    display: unset;
+    transition: 0.100s;
+    cursor: pointer;
+    padding: 4px;
+
+}
+
+._detect_Elements
+{
+
+    width: 100%;
+    height: 100%;
+    font-size: 20px;
+    text-align: center;
+    padding-top: 5px;
+    border-radius: 5px;
+
+}
+
+._detect_Elements:hover
+{
+
+    transition: 0.100s linear;
+    background-color: #099e44;
+    
+}
+
+._detected_Icon span
+{
+
+    padding-left: 8px;
+
+}
+
+._city_Icon
+{
+
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    
+}
+
+._reverse_V_Icon
+{
+
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    cursor: pointer;
+
+}
+
+._location_Icon
+{
+
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+
+}
+
+/* This elements are will create dynamically for city and address search suggestion*/
+
+#_city_Suggestion
+{
+
+    position: absolute;
+    height: 200px;
+    width: 200px;
+    background-color: #ffffff !important;
+    margin-top: 10px;
+    z-index: 10;
+    border-radius: 5px;
+    border-bottom: 0.1px solid black;
+    overflow: hidden auto;
+
+}
+
+#_city_Suggestion ul
+{
+
+    list-style: none;
+
+}
+
+#_city_Suggestion ul li
+{
+    
+    cursor: pointer;
+    width: 100%;
+    height: 68px;
+    padding: 20px;
+    font-size: 20px;
+    border-bottom: 1px solid rgba(124, 117, 117, 0.5);
+
+}
+
+#_city_Suggestion::-webkit-scrollbar
+{
+    width: 5px;
+}
+
+#_city_Suggestion::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(255, 0, 0, 0.3); 
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+ 
+#_city_Suggestion::-webkit-scrollbar-thumb
+{
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.8); 
+    -webkit-box-shadow: inset 0 0 6px rgba(126, 120, 120, 0.5, 0.5);
+}
+
+#_city_Location_Suggestion
+{
+
+    position: absolute;
+    height: 200px;
+    background-color: #ffffff !important;
+    margin-top: 10px;
+    z-index: 10;
+    border-radius: 5px;
+    border-bottom: 0.1px solid black;
+    overflow: hidden auto;
+
+}
+
+#_city_Location_Suggestion ul
+{
+
+    list-style: none;
+
+}
+
+#_city_Location_Suggestion ul li
+{
+    
+    cursor: pointer;
+    width: 100%;
+    height: 68px;
+    padding: 20px;
+    font-size: 20px;
+    border-bottom: 1px solid rgba(124, 117, 117, 0.5);
+
+}
+
+#_city_Location_Suggestion::-webkit-scrollbar
+{
+    width: 5px;
+}
+
+#_city_Location_Suggestion::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(255, 0, 0, 0.3); 
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+ 
+#_city_Location_Suggestion::-webkit-scrollbar-thumb
+{
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.8); 
+    -webkit-box-shadow: inset 0 0 6px rgba(126, 120, 120, 0.5, 0.5);
+}
+
+/* How work */
+
+._how_Work
+{
+
+    width: 100%;
+    height: auto;
+    padding: 90px 10%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    background-color: #00000009;
+
+}
+
+._information_Text h1, ._information_Text h3
+{
+
+    display: block;
+    width: 100%;
+    height: auto;
+    color: rgb(80, 73, 73);
+    text-align: center;
+
+}
+
+._information_Text h1
+{
+
+    font-weight: 600;
+
+}
+
+._information_Text h3
+{
+
+    font-weight: 400;
+
+}
+
+._process_Track
+{
+
+    display: grid;
+    padding-top: 30px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 30px;
+    justify-content: center;
+
+}
+
+._work_Process
+{
+
+    padding: 50px;
+    border-radius: 20px;
+    border: 1px solid rgba(124, 113, 113, 0.274);
+    box-shadow: 0px 30px 50px rgba(0, 0, 0, 0.5);
+    
+
+}
+
+._work_Process img
+{
+
+    display: block;
+    margin: 0px auto;
+
+}
+
+._work_Process span
+{
+
+    display: block;
+    height: auto;
+    width: 100%;
+    text-align: center;
+    color: rgb(134, 124, 124);
+    margin: auto;
+    margin-top: 15px;
+
+}
+
+/* App download */
+
+._app_Download
+{
+
+    width: 100%;
+    height: auto;
+    padding: 90px 10%;
+    background-color: #fff;
+    display: grid;
+    grid-template-columns: auto;
+    grid-auto-rows: auto;
+    background-color: #00000009;
+
+}
+
+._app_Download_Information h1
+{
+
+    display: block;
+    text-align: center;
+    color: rgb(80, 73, 73);
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+._app_Banner
+{
+
+    display: block;
+    max-width: 300px;
+
+}
+
+._app_Instructions
+{
+
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-column-gap: 10px;
+
+}
+
+._app_Links
+{
+
+    padding-left: 20px;
+    border-left: 1px dotted rgba(0, 0, 0, 0.253);
+
+}
+
+._app_Links h1, ._app_Links h4
+{
+
+    font-weight: 600;
+    color: rgb(80, 73, 73);
+
+}
+
+._app_Links h4
+{
+
+    margin-top: 10px;
+    font-weight: 400;
+
+}
+
+._app_Market
+{
+
+    width: 100%;
+    height: auto;
+    font-size: 0;
+    margin-top: 10px;
+
+}
+
+._app_Market :nth-child(2)
+{
+
+    margin-left: 15px;
+
+}
+
+._app_Market img
+{
+
+    display: inline-block;
+    
+}
+
+._or
+{
+    width: 100%;
+    height: 20px;
+
+}
+
+._or::before
+{
+
+    content: '';
+    display: inline-block;
+    position: relative;
+    top: calc(-25%);
+    left: 0px;
+    width: 108px;
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.151);
+
+}
+
+._or::after
+{
+
+    content: '';
+    display: inline-block;
+    position: relative;
+    top: calc(-25%);
+    left: 0px;
+    width: 108px;
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.158);
+
+}
+
+._app_Get_Form
+{
+
+    width: 100%;
+    height: auto;
+    /* background-color: blue; */
+
+}
+
+._app_Get_Form input
+{
+
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    border: 2px solid rgba(0, 0, 0, 0.192);
+    padding: 5px;
+    transition: 0.1s;
+    height: 30px;
+
+}
+
+._app_Get_Form input:focus
+{
+
+    border: 2px solid rgb(108, 108, 235);
+    
+}
+
+._country_Code
+{
+
+    width: 50px;
+
+}
+
+._app_Get_Form button
+{
+
+    width: 218px;
+    height: 40px;
+    outline: none;
+    border: none;
+    background-color: rgb(108, 108, 235);
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: 0.1s;
+
+}
+
+._app_Get_Form button:hover
+{
+
+    background-color: white;
+    color: rgb(108, 108, 235);
+    border: 1px solid rgb(108, 108, 235);
+
+}
+
+/* Footer */
+
+._footer
+{
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+    padding: 60px 10%;
+    background-color: rgb(40, 44, 53);
+
+}
+
+._footer ul
+{
+
+    list-style: none;
+
+}
+
+._footer ._footer_Box
+{
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.144);
+    display: grid;
+    grid-auto-rows: auto;
+    
+}
+
+._coppy_Right_Message
+{
+
+    grid-column: 1 / span 6;
+
+}
+
+._languages
+{
+    
+    grid-template-columns: repeat(2, max-content);
+    justify-content: space-between;
+    
+}
+
+._custom_Select_Box
+{
+
+    width: auto;
+    position: relative;
+    background-color: #282c35;
+    height: 30px;
+    width: 150px;
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.514);
+
+}
+
+._Initial_Language
+{
+
+    margin-left: 10px;
+
+}
+
+._custom_Select_Box h4
+{
+
+    display: block;
+    margin-top: 3.5px;
+    font-weight: 400;
+    color: white;
+    position: relative;
+
+}
+
+._custom_Select_Box h4::after
+{
+
+    content: '';
+    position: absolute;
+    background-color: #fff;
+    width: 20px;
+    height: 20px;
+    top: 8px;
+    left: calc(100% - 30px);
+    clip-path: polygon(50% 46%, 0 0, 100% 0);
+
+}
+
+._custom_Select_Box ._items
+{
+
+    display: block;
+    margin-top: 4.5px;
+    width: 100%;
+    overflow: hidden;
+    background-color: #444343;
+    box-shadow: 0 2px 3px 0 #dbd5d5;
+
+}
+
+._custom_Select_Box ._items li
+{
+
+    padding-left: 10px;
+    width: 100%;
+    height: 35px;
+    padding-top: 5px;
+    color: rgb(175, 170, 170);
+    transition: 0.1s all linear;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.466);
+
+}
+
+._custom_Select_Box ._items li:hover
+{
+
+    background-color: #5e5c5c;
+
+}
+
+._selected
+{
+
+    font-weight: 500;
+    color: rgb(201, 190, 190) !important;
+
+}
+
+._about_Zomato
+{
+
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+
+}
+
+._footer_Box ._footer_Columns ul li a
+{
+
+    text-decoration: none;
+    font-size: 0.8rem;
+    color: rgb(173, 176, 182) !important;
+
+}
+
+._footer_Box ._footer_Columns ul li a:hover
+{
+
+    text-decoration: underline;
+
+}
+
+._footer_Box ._footer_Columns ul li
+{
+
+    display: block;
+    padding: 5px;
+    margin-top: 5px;
+    
+}
+
+._anchor_Topic
+{
+
+    font-weight: 700;
+    color: rgb(203, 208, 218) !important;
+    pointer-events: none;
+
+}
+
+._countries
+{
+
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+
+}
+
+._more_Links
+{
+
+    display: block;
+    float: left;
+
+}
+
+._social_Links
+{
+
+    display: block;
+    float: right;
+
+}
+._more_Links li
+{
+
+    width: auto;
+    display: inline-block !important;
+
+}
+
+._social_Links li
+{
+
+    width: auto;
+    display: inline-block !important;
+
+}
+
+._social_Links li img
+{
+
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+
+}
+
+._coppy_Right_Message
+{
+
+    padding: 10px 0px;
+    font-size: 0.6rem;
+    font-weight: 500;
+    color: rgb(173, 176, 182);
+
+}
